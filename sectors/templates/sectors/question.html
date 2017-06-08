@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Available Sectors{% endblock %}
+
+{% block content %}
+<div class="panel-body">
+    {% for question in questions %}
+        <div class="card">
+            <header><a href="{% url 'sectors:detail' pk=sector.pk %}">{{ sector.title }}</a></header>
+            <div class="card-copy">
+              {{ sector.description }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}{{ sector.title }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+  <h1> {{ sector.title }}</h1>
+        {{ sector.description }}
+</div>
+    <article>
+
+        <section>
+            {% for job in jobs %}
+                <h3>
+                    <a href="{{ job.get_absolute_url }}">{{ job.title }}</a>
+                </h3>
+                {{ job.description }}
+            {% endfor %}
+        </section>
+    </article>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}Apply{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+  <h1>Application Form <small>for the position of {{ job.title }}</small></h1>
+</div>
+    <div class="form-group">
+        <form action="" method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input class='form-control' type="submit">
+        </form>
+    </div>
+{% endblock %}
+
+<hidden>To add the apply page. It is important to understand that pk can be used however, change the added apply piece
+    everywhere.
+</hidden>

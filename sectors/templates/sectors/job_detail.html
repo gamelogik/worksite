@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ job.title }} - {{ job.sector.title }}{% endblock %}
+
+{% block content %}
+    <article>
+
+
+        <div class="page-header">
+            <h2><a href="{% url 'sectors:detail' pk=job.sector.pk %}">{{ job.sector.title }}</a></h2>
+        </div>
+        <h3>{{ job.title }}</h3>
+        {{ job.content|linebreaks }}
+        <p><a href="{% url 'sectors:apply' sector_pk=job.sector.pk job_pk=job.pk %}">Apply</a></p>
+
+    </article>
+{% endblock %}
+
+<hidden>To add the apply page. It is important to understand that pk can be used however, change the added apply piece
+    everywhere.
+</hidden>
